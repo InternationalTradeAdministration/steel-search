@@ -1,10 +1,10 @@
 self.__precacheManifest = [
   {
-    "revision": "530888cc5433f040cfa7",
+    "revision": "e10587135bc2a3758b74",
     "url": "./static/js/steel-search.js"
   },
   {
-    "revision": "530888cc5433f040cfa7",
+    "revision": "e10587135bc2a3758b74",
     "url": "./static/css/steel-search.css"
   },
   {
