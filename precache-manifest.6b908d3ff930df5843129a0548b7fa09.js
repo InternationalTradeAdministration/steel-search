@@ -1,18 +1,18 @@
 self.__precacheManifest = [
   {
-    "revision": "a747231ae01a8e0830c4",
+    "revision": "52adafc42fdb21280dd1",
     "url": "./static/js/steel-search.js"
   },
   {
-    "revision": "a747231ae01a8e0830c4",
+    "revision": "52adafc42fdb21280dd1",
     "url": "./static/css/steel-search.css"
   },
   {
-    "revision": "dda0cd5a3ecc98452e5d8e25328b3725",
+    "revision": "3fb38970ea6c65ece43a07b7c07d7cf4",
     "url": "./staging.html"
   },
   {
-    "revision": "a081188bcb290778a4aa89910cf7119a",
+    "revision": "b6d8c89527469f6070fdb10733c6174e",
     "url": "./index.html"
   }
 ];
