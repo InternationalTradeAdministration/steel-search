@@ -9,14 +9,14 @@
     <title>Global Steel Trade Monitor</title>
     <script>
       document.addEventListener("DOMContentLoaded", function() {
-        var BASE_URL = "https://api.trade.gov/v1/steel_data_staging/search";
+        var BASE_URL = "https://api.trade.gov/v1/steel_data/search";
         var API_KEY = "FGjwxfSkdeVB2GncULww_uFb";
         var divID = "GSTM-app";
         window.Explorer.renderSteelSearch(BASE_URL, API_KEY, divID);
       });
     </script>
-  </head>
+  <link href="./static/css/steel-search.css" rel="stylesheet"></head>
   <body>
     <div id="GSTM-app"></div>
-  </body>
+  <script src="./static/js/steel-search.js"></script></body>
 </html>
