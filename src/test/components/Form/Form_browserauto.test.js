@@ -1,5 +1,6 @@
 import '@babel/polyfill';
-import puppeteer from 'puppeteer';
+// import puppeteer from 'puppeteer';
+const puppeteer = require('puppeteer');
 
 jest.setTimeout(120000);
 
@@ -30,7 +31,7 @@ test('should render the select dropdowns in the correct order', async () => {
 
 test('should render the select dropdowns with the correct initial values', async () => {
   await page.waitForSelector('span.Select-value-label', 20000);
-  await page.waitFor(1000);
+  await page.waitFor(2000);
 
   const data = await page.evaluate(() => {
     const labels = Array.from(document.querySelectorAll('.explorer__form .Select-value-label'));
