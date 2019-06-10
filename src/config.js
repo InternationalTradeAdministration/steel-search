@@ -1,6 +1,6 @@
 import '@babel/polyfill';
 
-const footnote = 'Source: U.S. Department of Commerce, Enforcement and Compliance.  Includes content supplied by IHS Global Ltd.; Copyright © IHS Global, Ltd., 2018. All rights reserved.';
+const footnote = 'Source: U.S. Department of Commerce, Enforcement and Compliance.  Includes content supplied by IHS Global Ltd.; Copyright © IHS Global, Ltd. All rights reserved.';
 const monitor_link = 'https://www.trade.gov/steel/global-monitor.asp';
 const faqs_link = 'https://www.trade.gov/steel/pdfs/faqs.pdf';
 

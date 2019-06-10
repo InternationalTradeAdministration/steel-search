@@ -11,7 +11,7 @@ const DashboardFootnote = () => {
       <br /> Steel Import Monitoring and Analysis Team
       <br/> Email: <a href="mailto:ecglobalsteelstats@trade.gov">ecglobalsteelstats@trade.gov</a>  Call: (202) 482-2105</p>
     
-      <p> Data Source: Global Trade Atlas; Copyright © IHS Markit Global Inc. 2018.  All rights reserved.  </p>
+      <p> Data Source: Global Trade Atlas; Copyright © IHS Markit Global Inc.  All rights reserved.  </p>
 
       <h4 className="explorer__footnote-terms-header">Terms and Conditions:</h4>
       <ol className="explorer__footnote-terms">
