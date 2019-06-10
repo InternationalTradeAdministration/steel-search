@@ -51,7 +51,7 @@ describe('components', () => {
 
       const footnote = wrapper.find('p');
       expect(footnote.hasClass('explorer__graph-footnote')).toBe(true);
-      expect(footnote.text()).toBe('Source: U.S. Department of Commerce, Enforcement and Compliance.  Includes content supplied by IHS Global Ltd.; Copyright © IHS Global, Ltd., 2018. All rights reserved.  Updated on 09-14-2017.  Trade covered in the table is 17,852,770.02 metric tons.');
+      expect(footnote.text()).toBe('Source: U.S. Department of Commerce, Enforcement and Compliance.  Includes content supplied by IHS Global Ltd.; Copyright © IHS Global, Ltd. All rights reserved.  Updated on 09-14-2017.  Trade covered in the table is 17,852,770.02 metric tons.');
     });
   });
 });

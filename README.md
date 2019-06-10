@@ -59,6 +59,7 @@ Include the build output (e.g. `bundle.js` and `explorer.css`) within the `head`
 
 ### Dependencies
 
+* Node (updated to use v10.15.3)
 * React
 * Webpack
 * [webpack-dev-server](https://github.com/webpack/webpack-dev-server)
