@@ -10,7 +10,7 @@ const config = Object.assign({
       api: {
         steel: {
           host: 'https://api.trade.gov/v1/steel_data/search',
-          apiKey: 'hQ4L7ylI9POH3QuqxOY_l2UC'
+          apiKey: 'z0HcA6rliy9k8c6kymR4kjNc'
         }
       }
     },
@@ -26,7 +26,7 @@ const config = Object.assign({
       api: {
         steel: {
           host: 'https://api.trade.gov/v1/steel_data/search',
-          apiKey: 'hQ4L7ylI9POH3QuqxOY_l2UC'
+          apiKey: 'z0HcA6rliy9k8c6kymR4kjNc'
         }
       }
     },
