@@ -2,6 +2,7 @@ import '@babel/polyfill';
 
 const footnote = 'Source: U.S. Department of Commerce, Enforcement and Compliance.  Includes content supplied by IHS Global Ltd.; Copyright © IHS Global, Ltd. All rights reserved.';
 const monitor_link = 'https://www.trade.gov/steel/global-monitor.asp';
+const GSTM2_link = 'https://beta.trade.gov/gstmcompare';
 const faqs_link = 'https://www.trade.gov/steel/pdfs/faqs.pdf';
 
 const config = Object.assign({
@@ -40,6 +41,7 @@ const config = Object.assign({
     }
   },
   monitor_link: monitor_link,
+  GSTM2_link: GSTM2_link,
   footnote: footnote,
   faqs_link: faqs_link
 });
