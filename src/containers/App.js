@@ -68,7 +68,7 @@ class App extends React.Component {
 
     return (
       <div className="explorer pure-g">
-
+        <a id="GSTM2_banner" href={config.GSTM2_link} target="_blank" rel="noopener noreferrer">View the Comparison Dashboard</a>
         <div className="pure-u-1 pure-u-xl-1-2 explorer__first-row">
           <div className="explorer__form-content">
             <h1 className="Header-1"><a href={config.monitor_link} target="_blank"><b>Global Steel Trade Monitor</b></a></h1>
