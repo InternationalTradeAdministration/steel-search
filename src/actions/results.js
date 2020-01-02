@@ -59,12 +59,16 @@ function fetchResults(endpointKey, params, offset = 0, aggregated_results = {}) 
   return (dispatch) => {
     dispatch(requestResults());
 
-    const { host, apiKey } = config.endpoints[endpointKey].api.steel;
+    const { host, accessToken } = config.endpoints[endpointKey].api.steel;
     const product_group_querystring = stringify(omit(params, ['partner_countries', 'comparison_interval_start', 'comparison_interval_end', 'pie_period']));
     const partner_country_querystring = stringify(omit(params, ['product_groups', 'comparison_interval_start', 'comparison_interval_end', 'pie_period']));
     const requests = [
-      fetch(`${host}?api_key=${apiKey}&size=100&offset=${offset}&${product_group_querystring}`).then(response => response.json()),
-      fetch(`${host}?api_key=${apiKey}&size=100&offset=${offset}&${partner_country_querystring}`).then(response => response.json()) ];
+      fetch(`${host}?size=100&offset=${offset}&${product_group_querystring}`, {
+        headers: { 'Authorization': 'Bearer ' + accessToken }  
+      }).then(response => response.json()),
+      fetch(`${host}?size=100&offset=${offset}&${partner_country_querystring}`, {
+        headers: { 'Authorization': 'Bearer ' + accessToken }  
+      }).then(response => response.json()) ];
 
     return Promise.all(requests)
       .then(json => dispatch(aggregateResults(json, params, offset, aggregated_results)))
