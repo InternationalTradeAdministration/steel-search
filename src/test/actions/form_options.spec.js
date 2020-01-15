@@ -36,7 +36,7 @@ const reporter_response = {
 };
 
 const endpointKey = 'test';
-const { host, apiKey } = config.endpoints[endpointKey].api.steel;
+const { host, accessToken } = config.endpoints[endpointKey].api.steel;
 
 describe('async actions', () => {
   afterEach(() => {
@@ -44,8 +44,12 @@ describe('async actions', () => {
   });
 
   it('set trade flow and flow type options', () => {
-    nock(host)
-      .get(`?api_key=${apiKey}&size=1&`)
+    nock(host, {
+      headers: {
+        authorization: `Bearer ${accessToken}`,
+      },
+    })
+      .get(`?size=1&`)
       .reply(200, form_options_response);
 
     const store = mockStore(initialize_store);
@@ -65,8 +69,12 @@ describe('async actions', () => {
   });
 
   it('set reporter country options from trade flow', () => {
-    nock(host)
-      .get(`?api_key=${apiKey}&size=1&trade_flow=IMP`)
+    nock(host, {
+      headers: {
+        authorization: `Bearer ${accessToken}`,
+      },
+    })
+      .get(`?size=1&trade_flow=IMP`)
       .reply(200, trade_flow_response);
 
     const store = mockStore(initialize_store);
@@ -85,8 +93,12 @@ describe('async actions', () => {
   });
 
   it('set partner and product groups options from trade flow and reporter', () => {
-    nock(host)
-      .get(`?api_key=${apiKey}&size=1&trade_flow=IMP&reporter_countries=China`)
+    nock(host, {
+      headers: {
+        authorization: `Bearer ${accessToken}`,
+      },
+    })
+      .get(`?size=1&trade_flow=IMP&reporter_countries=China`)
       .reply(200, reporter_response);
 
     const store = mockStore(initialize_store);
