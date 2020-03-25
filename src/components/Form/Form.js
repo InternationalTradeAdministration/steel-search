@@ -147,7 +147,7 @@ class DashboardForm extends React.Component {
             <div className="explorer__form__label_group">
               <label htmlFor="productGroups">Product Groups</label>
               <p>
-                Steel Mill Products are contained in Flat, Long, Pipe/Tube, Semi-Finished or Stainless products. <a href="https://www.trade.gov/steel/pdfs/product-definitions.pdf" target="_blank">More Information.</a>
+                Steel Mill Products are contained in Flat, Long, Pipe/Tube, Semi-Finished or Stainless products. <a href="https://legacy.trade.gov/steel/pdfs/product-definitions.pdf" target="_blank" rel="noopener">More Information.</a>
               </p>
             </div>
 
