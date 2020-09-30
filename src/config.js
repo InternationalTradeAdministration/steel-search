@@ -10,32 +10,32 @@ const config = Object.assign({
     development: {
       api: {
         steel: {
-          host: 'https://api.trade.gov/v1/steel_data/search',
-          apiKey: 'z0HcA6rliy9k8c6kymR4kjNc'
+          host: 'https://api.trade.gov/gateway/v1/steel_data/search',
+          accessToken: 'b0045391-2ef8-3049-a215-f78b7716f045'
         }
       }
     },
     test: {
       api: {
         steel: {
-          host: 'http://127.0.0.1:3000/v1/steel_data/search',
-          apiKey: 'devkey'
+          host: 'http://127.0.0.1:3000/gateway/v1/steel_data/search',
+          accessToken: 'devkey'
         }
       }
     },
     production: {
       api: {
         steel: {
-          host: 'https://api.trade.gov/v1/steel_data/search',
-          apiKey: 'z0HcA6rliy9k8c6kymR4kjNc'
+          host: 'https://api.trade.gov/gateway/v1/steel_data/search',
+          accessToken: 'b0045391-2ef8-3049-a215-f78b7716f045'
         }
       }
     },
     staging: {
       api: {
         steel: {
-          host: 'https://api.trade.gov/v1/steel_data_staging/search',
-          apiKey: 'FGjwxfSkdeVB2GncULww_uFb'
+          host: 'https://api.trade.gov/gateway/v1/steel_data_staging/search',
+          accessToken: 'b0045391-2ef8-3049-a215-f78b7716f045'
         }
       }
     }
