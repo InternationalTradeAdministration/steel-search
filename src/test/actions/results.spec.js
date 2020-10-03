@@ -19,7 +19,7 @@ const initialize_store = {
 };
 
 const endpointKey = 'test';
-const { host, apiKey } = config.endpoints[endpointKey].api.steel;
+const { host, accessToken } = config.endpoints[endpointKey].api.steel;
 
 describe('async actions', () => {
   afterEach(() => {
@@ -27,10 +27,14 @@ describe('async actions', () => {
   });
 
   it('creates RECEIVE_RESULTS after building dashboard data', () => {
-    nock(host)
-      .get(`?api_key=${apiKey}&size=100&offset=0&flow_type=QTY&partner_countries=World&reporter_countries=United%20States&trade_flow=IMP`)
+    nock(host, {
+      headers: {
+        authorization: `Bearer ${accessToken}`,
+      },
+    })
+      .get(`?size=100&offset=0&flow_type=QTY&partner_countries=World&reporter_countries=United%20States&trade_flow=IMP`)
       .reply(200, partner_country_response)
-      .get(`?api_key=${apiKey}&size=100&offset=0&flow_type=QTY&product_groups=All%20Steel%20Mill%20Products&reporter_countries=United%20States&trade_flow=IMP`)
+      .get(`?size=100&offset=0&flow_type=QTY&product_groups=All%20Steel%20Mill%20Products&reporter_countries=United%20States&trade_flow=IMP`)
       .reply(200, product_group_response);
 
     const store = mockStore(initialize_store);

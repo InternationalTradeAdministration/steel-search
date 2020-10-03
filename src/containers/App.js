@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { camelCase, isEmpty, map, omit, omitBy, reduce, snakeCase, values } from '../utils/lodash';
-import { stringify } from 'querystring';
+import { stringify, parse } from 'querystring';
 import { DashboardForm, Spinner, YearlyBarGraph, ComparisonBarGraphs, PieGraphs, DashboardFootnote } from '../components';
 import { fetchResultsIfNeeded, requestFormOptions, requestTradeFlowSubgroups, requestReporterSubgroups } from '../actions';
 import './App.scss';
@@ -108,8 +108,8 @@ App.propTypes = {
 };
 
 function mapStateToProps(state, ownProps) {
-  let query = ownProps.history.getCurrentLocation().query;
-  if (isEmpty(ownProps.history.getCurrentLocation().query)){
+  let query = parse(ownProps.history.location.search.substring(1));
+  if (isEmpty(parse(ownProps.history.location.search.substring(1)))){
     query = {flow_type: "QTY", partner_countries: "World", product_groups: "All Steel Mill Products", reporter_countries: "United States", trade_flow: "IMP" };
   }
   const { results, form_options } = state;
