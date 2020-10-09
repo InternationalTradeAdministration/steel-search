@@ -69,10 +69,8 @@ export function requestReporterSubgroups(endpointKey, trade_flow, reporter_count
 function fetchResults(endpointKey, query, callback, params){
   return (dispatch) => {
     dispatch(requestOptions());
-    const { host, accessToken } = config.endpoints[endpointKey].api.steel;
-    return fetch(`${host}?size=1&${query}`, { 
-      headers: { 'Authorization': 'Bearer ' + accessToken } 
-    })
+    const { host, apiKey } = config.endpoints[endpointKey].api.steel;
+    return fetch(`${host}?api_key=${apiKey}&size=1&${query}`)
         .then(response => response.json())
         .then(json => dispatch(callback(endpointKey, json, params)))
         .catch((error) => {
