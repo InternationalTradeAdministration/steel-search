@@ -69,13 +69,24 @@ export function requestReporterSubgroups(endpointKey, trade_flow, reporter_count
 function fetchResults(endpointKey, query, callback, params){
   return (dispatch) => {
     dispatch(requestOptions());
-    const { host, apiKey } = config.endpoints[endpointKey].api.steel;
-    return fetch(`${host}?api_key=${apiKey}&size=1&${query}`)
-        .then(response => response.json())
-        .then(json => dispatch(callback(endpointKey, json, params)))
-        .catch((error) => {
-          dispatch(receiveFailure('There was an error connecting to the data source:  ' + error ));
-        });
+    const { host, keyOrToken } = config.endpoints[endpointKey].api.steel;
+    if (endpointKey === 'staging') {
+      return fetch(`${host}?api_key=${keyOrToken}&size=1&${query}`)
+      .then(response => response.json())
+      .then(json => dispatch(callback(endpointKey, json, params)))
+      .catch((error) => {
+        dispatch(receiveFailure('There was an error connecting to the data source:  ' + error ));
+      });
+    } else {
+      return fetch(`${host}?size=1&${query}`, {
+        headers: { 'Authorization': 'Bearer ' + keyOrToken }
+      })
+      .then(response => response.json())
+      .then(json => dispatch(callback(endpointKey, json, params)))
+      .catch((error) => {
+        dispatch(receiveFailure('There was an error connecting to the data source:  ' + error ));
+      });
+    }
   };
 }
 
