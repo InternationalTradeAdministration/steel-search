@@ -2,7 +2,7 @@ import '@babel/polyfill';
 
 const footnote = 'Source: U.S. Department of Commerce, Enforcement and Compliance.  Includes content supplied by IHS Global Ltd.; Copyright © IHS Global, Ltd. All rights reserved.';
 const monitor_link = 'https://www.trade.gov/steel/global-monitor.asp';
-const GSTM2_link = 'https://beta.trade.gov/gstmcompare';
+const GSTM2_link = 'https://www.trade.gov/data-visualization/gstm-comparison-dashboard';
 const faqs_link = 'https://www.trade.gov/steel/pdfs/faqs.pdf';
 
 const config = Object.assign({
